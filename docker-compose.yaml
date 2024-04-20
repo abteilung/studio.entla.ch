@@ -22,7 +22,7 @@ services:
         container_name: directus-entla
         image: directus/directus:10.10
         ports:
-            - 8054:8055
+            - 8053:8055
         volumes:
             - ./uploads:/directus/uploads
             - ./extensions:/directus/extensions
