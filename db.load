@@ -1,0 +1,7 @@
+load database
+     from sqlite://data.db
+     into pgsql://directus:directus@127.0.0.1/directus
+
+ with include drop, create tables, create indexes, reset sequences, data only
+
+  set work_mem to '16MB', maintenance_work_mem to '512 MB';
