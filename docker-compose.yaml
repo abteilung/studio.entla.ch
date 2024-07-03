@@ -11,7 +11,6 @@ services:
         restart: always
         depends_on:
             - directus
-            - umami
 
     database:
         container_name: entla24-database
@@ -86,49 +85,6 @@ services:
             # (see https://docs.directus.io/self-hosted/config-options#general)
             PUBLIC_URL: ${PUBLIC_URL}
             CORS_ENABLED: true
-
-    umami:
-        container_name: entla24-umami
-        image: ghcr.io/umami-software/umami:postgresql-latest
-        ports:
-            - 3034:3000
-        environment:
-            DATABASE_URL: postgresql://umami:umami@umamidb:5432/umami
-            DATABASE_TYPE: postgresql
-            APP_SECRET: bR4xVmRn0KM7asF0yhhQA0psJ9qpAInq
-        depends_on:
-            umamidb:
-                condition: service_healthy
-        restart: always
-        healthcheck:
-            test: ['CMD-SHELL', 'curl http://localhost:3000/api/heartbeat']
-            interval: 5s
-            timeout: 5s
-            retries: 5
-
-    umamidb:
-        container_name: entla24-umamidb
-        image: postgres:15-alpine
-        ports:
-            - 5332:5432
-        environment:
-            POSTGRES_DB: umami
-            POSTGRES_USER: umami
-            POSTGRES_PASSWORD: umami
-        volumes:
-            - umamidb-data:/var/lib/postgresql/data
-        restart: always
-        healthcheck:
-            test:
-                [
-                    'CMD-SHELL',
-                    'pg_isready -U $${POSTGRES_USER} -d $${POSTGRES_DB}',
-                ]
-            interval: 5s
-            timeout: 5s
-
-volumes:
-    umamidb-data:
 
         # Environment variables can also be defined in a file (for example `.env`):
         # env_file:
