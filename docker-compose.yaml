@@ -109,6 +109,8 @@ services:
     umamidb:
         container_name: entla24-umamidb
         image: postgres:15-alpine
+        ports:
+            - 5332:5432
         environment:
             POSTGRES_DB: umami
             POSTGRES_USER: umami
