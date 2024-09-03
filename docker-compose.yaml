@@ -99,6 +99,9 @@ services:
             PUBLIC_URL: ${PUBLIC_URL}
             CORS_ENABLED: true
             CORS_ORIGIN: ${CORS_ORIGIN}
+            CONTENT_SECURITY_POLICY_USE_DEFAULTS: ${CONTENT_SECURITY_POLICY_USE_DEFAULTS}
+            CONTENT_SECURITY_POLICY_DIRECTIVES__FRAME_SRC: ${CONTENT_SECURITY_POLICY_DIRECTIVES__FRAME_SRC}
+
         healthcheck:
             test:
                 - CMD
