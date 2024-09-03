@@ -98,7 +98,7 @@ services:
             # (see https://docs.directus.io/self-hosted/config-options#general)
             PUBLIC_URL: ${PUBLIC_URL}
             CORS_ENABLED: true
-            CORSS_ORIGIN: ${CORS_ORIGIN}
+            CORS_ORIGIN: ${CORS_ORIGIN}
         healthcheck:
             test:
                 - CMD
