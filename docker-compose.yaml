@@ -81,9 +81,10 @@ services:
             DB_PORT: '5432'
             DB_DATABASE: 'directus'
             DB_USER: 'directus'
-            DB_PASSWORD: 'directus'
+            DB_PASSWORD: ${DB_PASSWORD}
 
             CACHE_ENABLED: true
+            CONTENT_SECURITY_POLICY_DIRECTIVES__FRAME_SRC: ${CONTENT_SECURITY_POLICY_DIRECTIVES__FRAME_SRC}
             # Clear Cache if data is altered or added
             CACHE_AUTO_PURGE: true
             CACHE_TTL: '15m'
