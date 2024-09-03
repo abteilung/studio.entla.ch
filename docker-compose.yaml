@@ -20,7 +20,7 @@ services:
             - ./data/database:/var/lib/postgresql/data
         environment:
             POSTGRES_USER: 'directus'
-            POSTGRES_PASSWORD: 'directus'
+            POSTGRES_PASSWORD: ${DB_PASSWORD}
             POSTGRES_DB: 'directus'
         ports:
             - 5103:5432
