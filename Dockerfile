@@ -1,4 +1,4 @@
-FROM directus/directus:11.2.0
+FROM directus/directus:11.2.1
 
 # Switch to root user
 USER root
