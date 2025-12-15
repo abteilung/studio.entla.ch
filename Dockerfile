@@ -1,4 +1,4 @@
-FROM directus/directus:11.6
+FROM directus/directus:11.14
 
 # Switch to root user
 USER root
@@ -11,8 +11,8 @@ RUN cp /usr/share/zoneinfo/Europe/Zurich /etc/localtime && echo "Europe/Zurich" 
 
 # Ensure directories exist and have correct permissions
 RUN mkdir -p /directus /directus/database /directus/extensions /directus/uploads && \
-    chmod -R 775 /directus /directus/database /directus/extensions /directus/uploads && \
-    chown -R node:node /directus /directus/database /directus/extensions /directus/uploads
+  chmod -R 775 /directus /directus/database /directus/extensions /directus/uploads && \
+  chown -R node:node /directus /directus/database /directus/extensions /directus/uploads
 
 # Switch back to the original user
 USER node
