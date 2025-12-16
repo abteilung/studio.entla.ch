@@ -1,0 +1,9 @@
+{
+  "enabledMcpjsonServers": [
+    "svelte",
+    "playwright",
+    "chrome-devtools",
+    "context7",
+    "directus"
+  ]
+}

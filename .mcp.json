@@ -1,0 +1,30 @@
+{
+  "mcpServers": {
+    "svelte": {
+      "command": "npx",
+      "args": ["-y", "@sveltejs/mcp"]
+    },
+    "playwright": {
+      "command": "npx",
+      "args": ["@playwright/mcp@latest"]
+    },
+    "chrome-devtools": {
+      "command": "npx",
+      "args": ["chrome-devtools-mcp@latest"]
+    },
+    "context7": {
+      "type": "http",
+      "url": "https://mcp.context7.com/mcp",
+      "headers": {
+        "CONTEXT7_API_KEY": "ctx7sk-54e3227e-28d0-454c-b605-2382ed19ad35"
+      }
+    },
+    "directus": {
+      "type": "http",
+      "url": "https://studio.dsim.ch/mcp",
+      "headers": {
+        "Authorization": "Bearer Q1eQSftKPzufBMOc45LqPla-27nqlWOY"
+      }
+    }
+  }
+}
